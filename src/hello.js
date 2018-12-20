@@ -1,5 +1,5 @@
-import { successResponse, runWarm } from './utils';
 import fetch from 'node-fetch';
+import { successResponse, runWarm } from './utils';
 
 const hello = async (event, context, callback) => {
   // // successResponse handles wrapping the response in an API Gateway friendly
