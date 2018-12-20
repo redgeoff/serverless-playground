@@ -40,7 +40,9 @@
     "webpack": "^4.17.1",
     "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
   "lint-staged": {
     "src/**/*.js": [
       "yarn lint -- --fix",
