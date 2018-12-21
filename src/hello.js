@@ -1,3 +1,5 @@
+// TODO: remove as just generic example
+
 import fetch from 'node-fetch';
 import { successResponse, runWarm } from './utils';
 import foo from './services/foo';
