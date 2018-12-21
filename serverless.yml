@@ -74,6 +74,17 @@ functions:
       #     rate: rate(5 minutes)
       #     enabled: true
 
+  propertyAvailability:
+    handler: src/properties/availability.default
+    events:
+      - http:
+          path: properties/{propertyId}/availability
+          method: get
+          request:
+            parameters:
+              paths:
+                propertyId: true
+
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
