@@ -13,6 +13,13 @@ function lambdaResponse({ json, statusCode, allowCORS = false }) {
   return response;
 }
 
+export function badRequestResponse(json) {
+  return lambdaResponse({
+    json,
+    statusCode: 400,
+  });
+}
+
 export function errorResponse(json) {
   return lambdaResponse({
     json,

@@ -1,7 +1,10 @@
-import { successResponse, runWarm } from '../utils';
+import { successResponse, runWarm, badRequestResponse } from '../utils';
 
 const availability = async (event, context) => {
   const propertyId = event.pathParameters.propertyId;
+  if (propertyId === '123') {
+    return badRequestResponse({ errorMessage: 'cannot be 123' })
+  }
   return successResponse({ foo: 'bar', propertyId });
 };
 
