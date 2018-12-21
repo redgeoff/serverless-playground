@@ -169,3 +169,7 @@ yarn deploy:production
 
 After you've deployed, the output of the deploy script will give you the API endpoint
 for your deployed function(s), so you should be able to test the deployed API via that URL.
+
+## Swagger Docs
+
+The [API Docs](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/redgeoff/serverless-playground/master/swagger.json#/default/findPets) are automatically generated using swagger.io and the [swagger.json](swagger.json) definition
