@@ -13,9 +13,9 @@ function lambdaResponse({ json, statusCode, allowCORS = false }) {
   return response;
 }
 
-export function badRequestResponse(json) {
+export function badRequestResponse({ errorMessage }) {
   return lambdaResponse({
-    json,
+    json: { errorMessage },
     statusCode: 400,
   });
 }
