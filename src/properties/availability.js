@@ -1,7 +1,8 @@
 import { successResponse, runWarm } from '../utils';
 
 const availability = async (event, context) => {
-  return successResponse({ foo: 'bar' });
+  const propertyId = event.pathParameters.propertyId;
+  return successResponse({ foo: 'bar', propertyId });
 };
 
 // runWarm function handles pings from the scheduler so you don't
