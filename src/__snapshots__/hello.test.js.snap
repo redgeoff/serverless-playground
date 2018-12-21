@@ -6,7 +6,7 @@ exports[`hello executes as expected 1`] = `
     Array [
       null,
       Object {
-        "body": "{\\"firstBrewery\\":{\\"id\\":2,\\"name\\":\\"Avondale Brewing Co\\",\\"brewery_type\\":\\"micro\\",\\"street\\":\\"201 41st St S\\",\\"city\\":\\"Birmingham\\",\\"state\\":\\"Alabama\\",\\"postal_code\\":\\"35222-1932\\",\\"country\\":\\"United States\\",\\"longitude\\":\\"-86.774322\\",\\"latitude\\":\\"33.524521\\",\\"phone\\":\\"2057775456\\",\\"website_url\\":\\"http://www.avondalebrewing.com\\",\\"updated_at\\":\\"2018-08-23T23:19:57.825Z\\",\\"tag_list\\":[]}}",
+        "body": "{\\"names\\":[\\"Avondale Brewing Co\\",\\"Band of Brothers Brewing Company\\",\\"Trim Tab Brewing\\",\\"Yellowhammer Brewery\\",\\"Bearpaw River Brewing Co\\",\\"King Street Brewing Co\\",\\"1912 Brewing\\",\\"Bad Water Brewing\\",\\"BJs Restaurant & Brewery - Chandler\\",\\"BlackRock Brewers\\",\\"Dragoon Brewing Co\\",\\"Grand Canyon Brewing Company\\",\\"Mudshark Brewing Co\\",\\"Richter Aleworks\\",\\"SanTan Brewing Co\\",\\"State 48 Brewery\\",\\"Wren House Brewing Company\\",\\"Brick Oven Pizza Co / Brick & Forge Brewing\\",\\"Diamond Bear Brewing Co\\",\\"Lost Forty Brewing\\"]}",
         "statusCode": 200,
       },
     ],
