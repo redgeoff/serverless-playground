@@ -2,7 +2,7 @@
 
 exports[`availability executes as expected 1`] = `
 Object {
-  "body": "{\\"foo\\":\\"bar\\"}",
+  "body": "{\\"foo\\":\\"bar\\",\\"propertyId\\":\\"1234\\"}",
   "statusCode": 200,
 }
 `;
