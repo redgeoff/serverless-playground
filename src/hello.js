@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 import { successResponse, runWarm } from './utils';
 import foo from './services/foo';
 
-const hello = async (event, context) => {
+const hello = async (/* event, context */) => {
   // // successResponse handles wrapping the response in an API Gateway friendly
   // // format (see other responses, including CORS, in `./utils/lambda-response.js)
   // const response = successResponse({
