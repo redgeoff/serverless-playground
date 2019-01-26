@@ -9,7 +9,7 @@
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "REMOVE:lint": "eslint ./src",
-    "lint": "tslint -c tslint.json src",
+    "lint": "tslint -c tslint.json src/**/*.ts",
     "precommit": "lint-staged",
     "serve": "serverless offline start --host=0.0.0.0",
     "tail:hello": "serverless logs --function hello --tail",
