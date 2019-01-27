@@ -1,3 +1,4 @@
+import { APIGatewayProxyEvent } from "aws-lambda";
 import * as yup from 'yup';
 import { successResponse, runWarm, badRequestResponse } from '../utils';
 
@@ -6,15 +7,15 @@ const schema = yup.object().shape({
   propertyId: yup.number().required().integer()
 });
 
-export const isValid = async (pathParameters) => schema.isValid(pathParameters)
+export const isValid = async (pathParameters: APIGatewayProxyEvent['pathParameters']) => schema.isValid(pathParameters)
 
-const availability = async (event /* , context */) => {
+const availability = async (event: APIGatewayProxyEvent /* , context */) => {
   if (!(await isValid(event.pathParameters))) {
     // TODO: use yup to actually report details of why the data is invalid
     return badRequestResponse({ errorMessage: 'yup says no' })
   }
 
-  const { propertyId } = event.pathParameters;
+  const { propertyId=undefined } = event.pathParameters || {};
   if (propertyId === '123') {
     return badRequestResponse({ errorMessage: 'cannot be 123' })
   }

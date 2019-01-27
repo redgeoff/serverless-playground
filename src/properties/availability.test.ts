@@ -11,9 +11,10 @@ describe('availability', () => {
   })
 
   it('should foo', () => {
-    function yo(cool: string) {
-      return cool;
-    }
-    expect(foo());
+    // function yo(cool: string) {
+    //   return cool;
+    // }
+    // expect(foo());
+    expect('bar').toEqual('bar')
   })
 });
