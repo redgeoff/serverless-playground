@@ -8,6 +8,7 @@
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+    "destroy": "sls remove",
     "REMOVE:lint": "eslint ./src",
     "lint": "tslint -c tslint.json src/**/*.ts",
     "precommit": "lint-staged",
