@@ -8,16 +8,19 @@
     "deploy": "export NODE_ENV=dev && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
-    "lint": "eslint ./src",
+    "destroy": "sls remove",
+    "lint": "tslint -c tslint.json 'src/**/*{.ts,.tsx}'",
     "precommit": "lint-staged",
-    "serve": "serverless offline start",
+    "serve": "serverless offline start --host=0.0.0.0",
     "tail:hello": "serverless logs --function hello --tail",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
     "build": "serverless webpack",
     "watch:hello": "serverless invoke local --watch --function hello --path fixtures/event.json",
-    "watch:warm": "serverless invoke local --watch --function hello --path fixtures/scheduled.json"
+    "watch:warm": "serverless invoke local --watch --function hello --path fixtures/scheduled.json",
+    "touch": "find src -exec touch {} \\;"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -25,12 +28,6 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
-    "eslint": "^5.4.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.0",
     "husky": "^1.0.0",
     "jest": "^23.5.0",
     "lint-staged": "^8.0.0",
@@ -42,13 +39,22 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@types/aws-lambda": "^8.10.17",
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.18",
+    "@types/node-fetch": "^2.1.4",
+    "@types/yup": "^0.26.6",
+    "awesome-typescript-loader": "^5.2.1",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
+    "ts-jest": "^23.10.5",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.2.4",
     "yup": "^0.26.6"
   },
   "lint-staged": {
     "src/**/*.js": [
-      "yarn lint -- --fix",
+      "yarn tslint --fix -c tslint.json 'src/**/*{.ts,.tsx}'",
       "prettier --write",
       "git add"
     ]
