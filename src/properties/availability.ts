@@ -15,7 +15,7 @@ const ajv = new Ajv();
 //                      => schema.isValid(pathParameters);
 
 const schema = {
-  "$id": 'http://example.com/product.schema.json',
+  '$id': 'http://example.com/product.schema.json',
   $schema: 'http://json-schema.org/draft-07/schema#',
   // title: 'Property',
   // description: 'A property',
