@@ -54,8 +54,8 @@
     "yup": "^0.26.6"
   },
   "lint-staged": {
-    "src/**/*.ts": [
-      "yarn tslint --fix -c tslint.json 'src/**/*.ts'",
+    "src/**/*.{ts,tsx}": [
+      "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
       "prettier --write",
       "git add"
     ]
