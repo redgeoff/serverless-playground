@@ -1,4 +1,4 @@
-import availability, { isValid, foo } from './availability';
+import availability, { foo, isValid } from './availability';
 
 describe('availability', () => {
   it('executes as expected', async () => {
@@ -6,15 +6,15 @@ describe('availability', () => {
   });
 
   it('is valid', async () => {
-    expect(await isValid({ propertyId: 'aaa' })).toEqual(false)
+    expect(await isValid({ propertyId: 'aaa' })).toEqual(false);
     // TODO: ...
-  })
+  });
 
   it('should foo', () => {
     // function yo(cool: string) {
     //   return cool;
     // }
     // expect(foo());
-    expect('bar').toEqual('bar')
-  })
+    expect('bar').toEqual('bar');
+  });
 });

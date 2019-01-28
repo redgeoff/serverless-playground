@@ -10,7 +10,7 @@
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
     "destroy": "sls remove",
     "REMOVE:lint": "eslint ./src",
-    "lint": "tslint -c tslint.json src/**/*.ts",
+    "lint": "tslint -c tslint.json 'src/**/*{.ts,.tsx}'",
     "precommit": "lint-staged",
     "serve": "serverless offline start --host=0.0.0.0",
     "tail:hello": "serverless logs --function hello --tail",
@@ -61,7 +61,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "yarn lint -- --fix",
+      "yarn tslint --fix -c tslint.json 'src/**/*{.ts,.tsx}'",
       "prettier --write",
       "git add"
     ]
