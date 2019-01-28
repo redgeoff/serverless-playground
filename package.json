@@ -55,7 +55,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "yarn tslint --fix -c tslint.json 'src/**/*{.ts,.tsx}'",
+      "tslint --fix -c tslint.json 'src/**/*{.ts,.tsx}'",
       "prettier --write",
       "git add"
     ]

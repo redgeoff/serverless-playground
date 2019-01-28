@@ -12,7 +12,7 @@ it('executes as expected', async () => {
 // });
 
 it('is valid', async () => {
-  const validated = await validate({ propertyId: 'aaa' })
+  const validated = await validate({ propertyId: 'aaa' });
   expect(validated.valid).toEqual(false);
   // TODO: ...
 });

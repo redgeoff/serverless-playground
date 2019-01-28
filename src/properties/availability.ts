@@ -1,7 +1,7 @@
+import Ajv from 'ajv';
 import { APIGatewayProxyEvent } from 'aws-lambda';
 // import * as yup from 'yup';
 import { badRequestResponse, runWarm, successResponse } from '../utils';
-import Ajv from 'ajv';
 
 // TODO: move to ajv.js
 const ajv = new Ajv();
@@ -11,28 +11,29 @@ const ajv = new Ajv();
 //   propertyId: yup.number().required().integer(),
 // });
 
-// export const isValid = async (pathParameters: APIGatewayProxyEvent['pathParameters']) => schema.isValid(pathParameters);
+// export const isValid = async (pathParameters: APIGatewayProxyEvent['pathParameters'])
+//                      => schema.isValid(pathParameters);
 
 const schema = {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/product.schema.json",
-  // "title": "Property",
-  // "description": "A property",
-  "type": "object",
-  "properties": {
-    "propertyId": {
-      // "description": "The unique identifier for a property",
-      "type": "integer"
-    }
+  "$id": 'http://example.com/product.schema.json',
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  // title: 'Property',
+  // description: 'A property',
+  properties: {
+    propertyId: {
+      // description: 'The unique identifier for a property',
+      type: 'integer',
+    },
   },
-  "required": [ "propertyId" ]
+  required: [ 'propertyId' ],
+  type: 'object',
 };
 
 // Note: use async so that can easily be swapped with yup, if we decide to change
 export const validate = async (pathParameters: APIGatewayProxyEvent['pathParameters']) => ({
+  errors: ajv.errors,
   valid: ajv.validate(schema, pathParameters),
-  errors: ajv.errors
-})
+});
 
 const availability = async (event: APIGatewayProxyEvent /* , context */) => {
   const validated = await validate(event.pathParameters);
