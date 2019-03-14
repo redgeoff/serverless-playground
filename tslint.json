@@ -1,10 +1,13 @@
 {
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "tslint-config-prettier"
   ],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"]
+    "no-unnecessary-initializer": false,
+    "quotemark": [true, "single", "avoid-escape"],
+    "interface-name": false
   },
   "rulesDirectory": []
 }

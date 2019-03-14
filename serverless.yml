@@ -63,27 +63,25 @@ custom:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: src/hello.default
+  getPropertyAvailability:
+    handler: src/property/availability/handler.default
     events:
       - http:
-          path: hello
+          path: property/{propertyId}/availability
           method: get
-      # Ping every 5 minutes to avoid cold starts
-      # - schedule:
-      #     rate: rate(5 minutes)
-      #     enabled: true
-
-  propertyAvailability:
-    handler: src/properties/availability.default
-    events:
-      - http:
-          path: properties/{propertyId}/availability
-          method: get
+          cors: true
           request:
             parameters:
               paths:
                 propertyId: true
+
+  createProperty:
+    handler: src/property/create/handler.default
+    events:
+      - http:
+          path: property
+          method: post
+          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

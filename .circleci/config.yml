@@ -14,8 +14,8 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn lint
-      - run: yarn test
-      - run: yarn serverless invoke local --function hello
+      - run: yarn test:swagger
+      - run: yarn test:coverage
 workflows:
   version: 2
   build_and_test:

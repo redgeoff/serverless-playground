@@ -6,6 +6,12 @@ module.exports = {
   target: 'node',
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
   externals: [nodeExternals()],
+
+  // Currently we need to add '.ts' to the resolve.extensions array.
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  
   module: {
     rules: [
       {
