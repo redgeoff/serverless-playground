@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`executes as expected 1`] = `
-Object {
-  "body": "{\\"foo\\":\\"bar\\",\\"propertyId\\":1234}",
-  "statusCode": 200,
-}
-`;
