@@ -60,7 +60,7 @@
     "ajv": "^6.7.0",
     "awesome-typescript-loader": "^5.2.1",
     "bunyan": "^1.8.12",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^9.0.0",
     "jwk-to-pem": "^2.0.1",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
